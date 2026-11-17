@@ -12,6 +12,11 @@
 
 Steam 社区曾报告同一段对峙无法继续，官方在 1.0.6 更新说明中称修复了一个简中审判台词无法反驳的进度阻塞问题。该说明没有点名具体场景；本补丁的定位是恢复在 1.1.2 版本和现有存档中实际复现的门槛状态，不声称发现了全新的游戏缺陷。
 
+## 双击安装包（Windows）
+
+[下载双击安装包](dist/HiroBelievesEveryone-quick-v0.1.0.zip)。需要先安装 BepInEx 6 Unity IL2CPP 和 [ManosabaLoader v2.0.4](https://github.com/IrisuM/ManosabaMod/releases/tag/v2.0.4)；双击包不包含、不自动安装这些框架。关闭游戏，解压后将整个 `HiroBelievesEveryone-quick` 文件夹放到 `manosaba.exe` 所在目录，双击其中的 `Install.cmd`。已有存档在标题菜单读取。
+
+卸载时关闭游戏并双击 `Uninstall.cmd`。安装遇到不同内容的同名文件会停止，卸载只删除内容一致的补丁文件。
 ## 安装
 
 需要已安装 BepInEx 6 Unity IL2CPP 和 ManosabaLoader（通常位于 `BepInEx/plugins`）。解压后将以下文件按目录复制到游戏根目录：
@@ -45,5 +50,6 @@ dotnet build .\src\Trial12Fix.csproj -c Release -p:GameRoot="D:\SteamLibrary\ste
 ```
 
 项目代码使用 MIT 许可证，见 `LICENSE`。第三方工具和依赖说明见 `THIRD_PARTY_NOTICES.md`。
+
 
 
