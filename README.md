@@ -6,6 +6,14 @@
 
 这是一个针对《魔法少女的魔女审判》Windows PC 版的 BepInEx 6 IL2CPP 插件，并附带 ManosabaLoader 模式菜单元数据。
 
+## 框架与致谢
+
+- [ManosabaMod / ManosabaLoader](https://github.com/IrisuM/ManosabaMod)，作者 IrisuM；本项目使用其 MOD 框架与元数据格式，LGPL-2.1。感谢原作者及贡献者。
+- [BepInEx](https://github.com/BepInEx/BepInEx)，BepInEx 团队及贡献者，LGPL-2.1；[Il2CppInterop](https://github.com/BepInEx/Il2CppInterop)，knah、BepInEx 团队及贡献者，LGPL-3.0。
+- FuyumiM 对游戏启动崩溃的分析及[源码修复](https://github.com/FuyumiM/Il2CppInterop_for_manosaba/commit/519be46765e454da5df5979a7b34c1775adf7cbb)，以及 IrisuM 分享的运行库二进制修补，见[上游问题](https://github.com/BepInEx/Il2CppInterop/issues/225)。
+- 本插件的 Trial 6-12 状态恢复逻辑由本项目开发，项目代码及其许可证详见源码。框架和第三方组件按各自许可证发行。
+
+当前快速安装包**需要预装框架**；含框架的单文件一键安装包正在准备，尚未发布。
 ## 修复内容
 
 在游戏原生剧本 `Act02_Chapter01/Act02_Chapter01_Trial12` 的最后门槛处，检查原条件 `Skip6_12_3flag1=True&&Skip6_12_4flag1=True&&Skip6_12_5flag1=True`。仅当执行到该精确剧本和条件、且某个条件变量仍为 false 时，插件才将缺失标记恢复为 true。原生剧本继续负责生成可点击的伪证链接、显示答案并进入原有后续分支；插件不伪造按钮、不跳结局、不覆盖游戏剧本，也不使用 Harmony detour。
@@ -50,6 +58,7 @@ dotnet build .\src\Trial12Fix.csproj -c Release -p:GameRoot="D:\SteamLibrary\ste
 ```
 
 项目代码使用 MIT 许可证，见 `LICENSE`。第三方工具和依赖说明见 `THIRD_PARTY_NOTICES.md`。
+
 
 
 
